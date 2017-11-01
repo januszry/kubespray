@@ -223,3 +223,6 @@ helm_image_tag: "{{ helm_version }}"
 tiller_version: "{{ helm_version }}"
 tiller_image_repo: "gcr.io/kubernetes-helm/tiller"
 tiller_image_tag: "{{ tiller_version }}"
+
+dashboard_image_repo: gcr.io/google_containers/kubernetes-dashboard-amd64
+dashboard_image_tag: v1.6.3
