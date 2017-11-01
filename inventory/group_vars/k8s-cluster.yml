@@ -22,6 +22,10 @@ kube_users_dir: "{{ kube_config_dir }}/users"
 
 kube_api_anonymous_auth: false
 
+# extra runtime config
+kube_api_runtime_config:
+  - admissionregistration.k8s.io/v1alpha1
+
 ## Change this to use another Kubernetes version, e.g. a current beta release
 kube_version: v1.8.2
 
