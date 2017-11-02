@@ -31,6 +31,11 @@ spec:
     - --bind-address={{ ip | default(ansible_default_ipv4.address) }}
     - --cluster-cidr={{ kube_pods_subnet }}
     - --proxy-mode={{ kube_proxy_mode }}
+{% if kube_proxy_conntrack_max_per_core is defined %}
+    - --conntrack-max-per-core={{ kube_proxy_conntrack_max_per_core }}
+{% else %}
+    - --conntrack-max-per-core=65536
+{% endif %}
 {% if kube_proxy_masquerade_all and kube_proxy_mode == "iptables" %}
     - --masquerade-all
 {% endif %}

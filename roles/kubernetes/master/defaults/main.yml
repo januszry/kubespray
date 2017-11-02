@@ -47,10 +47,6 @@ kube_apiserver_admission_control:
   - GenericAdmissionWebhook
   - ResourceQuota
 
-# extra runtime config
-kube_api_runtime_config:
-  - admissionregistration.k8s.io/v1alpha1
-
 ## Enable/Disable Kube API Server Authentication Methods
 kube_basic_auth: false
 kube_token_auth: false
