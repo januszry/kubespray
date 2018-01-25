@@ -1,8 +1,4 @@
 ---
-# Versions
-kubedns_version: 1.14.7
-kubednsautoscaler_version: 1.1.1
-
 # Limits for dnsmasq/kubedns apps
 dns_memory_limit: 170Mi
 dns_cpu_requests: 100m
@@ -15,8 +11,6 @@ deploy_netchecker: false
 netchecker_port: 31081
 agent_report_interval: 15
 netcheck_namespace: default
-netcheck_agent_image: "{{ netcheck_agent_image_repo }}:{{ netcheck_agent_image_tag }}"
-netcheck_server_image: "{{ netcheck_server_image_repo }}:{{ netcheck_server_image_tag }}"
 
 # Limits for netchecker apps
 netchecker_agent_cpu_limit: 30m
@@ -27,13 +21,6 @@ netchecker_server_cpu_limit: 100m
 netchecker_server_memory_limit: 256M
 netchecker_server_cpu_requests: 50m
 netchecker_server_memory_requests: 64M
-
-# Dashboard
-dashboard_enabled: true
-dashboard_image_repo: gcr.io/google_containers/kubernetes-dashboard-amd64
-dashboard_image_tag: v1.8.1
-dashboard_init_image_repo: gcr.io/google_containers/kubernetes-dashboard-init-amd64
-dashboard_init_image_tag: v1.0.1
 
 # Limits for dashboard
 dashboard_cpu_limit: 100m
