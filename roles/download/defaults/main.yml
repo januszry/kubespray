@@ -76,10 +76,10 @@ pod_infra_image_tag: "{{ pod_infra_version }}"
 install_socat_image_repo: "xueshanf/install-socat"
 install_socat_image_tag: "latest"
 netcheck_version: "v1.0"
-netcheck_agent_img_repo: "quay.io/l23network/k8s-netchecker-agent"
-netcheck_agent_tag: "{{ netcheck_version }}"
-netcheck_server_img_repo: "quay.io/l23network/k8s-netchecker-server"
-netcheck_server_tag: "{{ netcheck_version }}"
+netcheck_agent_image_repo: "quay.io/l23network/k8s-netchecker-agent"
+netcheck_agent_image_tag: "{{ netcheck_version }}"
+netcheck_server_image_repo: "quay.io/l23network/k8s-netchecker-server"
+netcheck_server_image_tag: "{{ netcheck_version }}"
 weave_kube_image_repo: "weaveworks/weave-kube"
 weave_kube_image_tag: "{{ weave_version }}"
 weave_npc_image_repo: "weaveworks/weave-npc"
@@ -131,14 +131,14 @@ downloads:
   netcheck_server:
     enabled: "{{ deploy_netchecker }}"
     container: true
-    repo: "{{ netcheck_server_img_repo }}"
-    tag: "{{ netcheck_server_tag }}"
+    repo: "{{ netcheck_server_image_repo }}"
+    tag: "{{ netcheck_server_image_tag }}"
     sha256: "{{ netcheck_server_digest_checksum|default(None) }}"
   netcheck_agent:
     enabled: "{{ deploy_netchecker }}"
     container: true
-    repo: "{{ netcheck_agent_img_repo }}"
-    tag: "{{ netcheck_agent_tag }}"
+    repo: "{{ netcheck_agent_image_repo }}"
+    tag: "{{ netcheck_agent_image_tag }}"
     sha256: "{{ netcheck_agent_digest_checksum|default(None) }}"
   etcd:
     enabled: true

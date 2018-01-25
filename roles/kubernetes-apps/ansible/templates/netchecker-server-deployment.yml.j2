@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: netchecker-server
-          image: "{{ server_img }}"
+          image: "{{ netcheck_server_image }}"
           env:
           imagePullPolicy: {{ k8s_image_pull_policy }}
           resources:
