@@ -74,6 +74,14 @@
 - name: flush handlers so we can wait for docker to come up
   meta: flush_handlers
 
+- name: start docker service to get version
+  service:
+    name: "{{ item }}"
+    enabled: yes
+    state: started
+  with_items:
+    - docker
+
 - name: set fact for docker_version
   command: "docker version -f '{{ '{{' }}.Client.Version{{ '}}' }}'"
   register: installed_docker_version
@@ -94,6 +102,6 @@
   service:
     name: "{{ item }}"
     enabled: yes
-    state: started
+    state: restarted
   with_items:
     - docker
